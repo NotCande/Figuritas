@@ -1,4 +1,4 @@
-public class Square extends Shape {
+public class Square extends Shape implements Resizable{
     private double side;
 
     public Square(double side) {
@@ -8,5 +8,13 @@ public class Square extends Shape {
     @Override
     public double calculateArea() {
         return side * side;
+    }
+
+    @Override
+    public void resize(double ratio) {
+        side *= ratio;
+
+        System.out.println("Resizing ratio: " + ratio);
+        System.out.println("New area: " + calculateArea());
     }
 }
